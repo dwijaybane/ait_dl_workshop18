@@ -48,8 +48,8 @@ $ tar -xvzf git-lfs-linux-amd64-v2.6.0.tar.gz
 $ sudo ./install.sh
 $ rm *
 $ git lfs install
-$ git clone https://github.com/ELSPL/dl-lab-files.git
-$ du -sh dl-lab-files/  -> 6.7G
+$ git clone https://github.com/dwijaybane/dl-lab-files.git
+$ du -sh dl-lab-files/  -> 41 M
 $ cd dl-lab-files
 $ ./nvidia-drivers.sh
 ```
