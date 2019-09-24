@@ -49,7 +49,7 @@ $ sudo ./install.sh
 $ rm *
 $ git lfs install
 $ git clone https://github.com/dwijaybane/dl-lab-files.git
-$ du -sh dl-lab-files/  -> 41 M
+$ du -sh dl-lab-files/  -> 70 M
 $ cd dl-lab-files
 $ ./nvidia-drivers.sh
 ```
@@ -72,8 +72,8 @@ $ docker run hello-world
 Once we have docker running lets setup our data for examples
 ```
 $  cd Downloads/dl-lab-files
-$ ./extract.sh
 $ ./download.sh
+$ ./extract.sh
 $ echo "LAB=~/Downloads/dl-lab-files/" >> ~/.bashrc
 $ source ~/.bashrc 
 ```
@@ -84,11 +84,9 @@ $ source ~/.bashrc
 4. Now we can download and run our dl-lab image in container
 ```
 $ nvidia-docker run --rm --init -it --name container1 -p 5000:5000 -p 8888:8888 -v $LAB:/LAB -w="/LAB" -v docker_store:/docker_store streaminterrupt/dl-lab:base
-  OR
-$ nvidia-docker run --rm --init -it --name container1 -p 5000:5000 -p 8888:8888 -v $LAB:/LAB -w="/LAB" -v docker_store:/docker_store streaminterrupt/dl-lab:v3
 ```
 
-5. Extract and prepare data set [In Container]
+5. Extract and prepare data set [In Container][OPTIONAL]
 ```
 $ cd ObjectDetectionKITTI
 $ ./prepare_kitti_data.py
@@ -104,7 +102,7 @@ $ cd .. #go back to LAB folder
 
 7. Now open new tab of terminal
 ```
-$ ssh paperspace
+$ ssh paperspace repository contains material to 
 $ docker exec -it container1 bash
 $ jupyter-notebook --ip=0.0.0.0 --port=8888 --allow-root  
 ```
